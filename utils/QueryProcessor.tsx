@@ -65,6 +65,12 @@ export default function QueryProcessor(query: string): string {
     }
     return 'aaa'
   }
-
+  // What is 33 to the power of 45?	
+  if (query.includes("to the power of")) {
+    var q = query.split(" ");
+    var num1 = parseInt(q[2]);
+    var num2 = parseInt(q[7]);
+    return (Math.pow(num1, num2)).toString();
+  }
   return "";
 }
