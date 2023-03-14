@@ -17,4 +17,9 @@ describe("QueryProcessor", () => {
             "writer in the English language and the world's pre-eminent dramatist."
           ));
     });
+
+    test('power', () => {
+        const query = "Which of the following numbers is both a square and a cube: 2778, 1849, 2744, 2914, 3920, 4522, 729?";
+        const response: string = QueryProcessor(query);
+    })
 });
