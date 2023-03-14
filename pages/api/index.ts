@@ -11,7 +11,7 @@ export default function handler(
   console.log(req.url);
   
   const query = req.query.q as string;
-  const response = QueryProcessor(query);
+  const response = QueryProcessor("abcd");
 
   res.status(200).send(response);
 }
