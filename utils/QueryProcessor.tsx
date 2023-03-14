@@ -37,18 +37,18 @@ export default function QueryProcessor(query: string): string {
     return (num1 * num2).toString();
   }
   // Which of the following numbers is both a square and a cube: 23, 3364, 3147, 729, 22, 277, 4913?
-  // if (query.includes("")) {
-  //   var number = query.split(": ")[1].replace('?', "");
-  //   var numbers = number.split(", ")
+  if (query.includes("square and a cube")) {
+    var number = query.split(": ")[1].replace('?', "");
+    var numbers = number.split(", ")
 
-  //   for (let i = 0; i < numbers.length; i++){
-  //     var n = parseInt(numbers[i])
+    for (let i = 0; i < numbers.length; i++){
+      var n = parseInt(numbers[i])
       
-  //     if (Number.isInteger(Math.pow(n, 1/6))){
-  //       return numbers[i]
-  //     }
-  //   }
-  // }
+      if (Number.isInteger(Math.pow(n, 1/6))){
+        return numbers[i]
+      }
+    }
+  }
 
   return "";
 }
