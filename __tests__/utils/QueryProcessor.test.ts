@@ -19,8 +19,8 @@ describe("QueryProcessor", () => {
     });
 
     test('power', () => {
-        const query = "Which of the following numbers is both a square and a cube: 2778, 1849, 2744, 2914, 3920, 4522, 729?";
+        const query = "Which of the following numbers is both a square and a cube: 2947, 4096, 3136, 2744, 1270, 4845, 4788?";
         const response: string = QueryProcessor(query);
-        expect(response).toBe("729");
+        expect(response).toBe("4096");
     })
 });
