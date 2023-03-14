@@ -36,6 +36,13 @@ export default function QueryProcessor(query: string): string {
     var num2 = parseInt(q[5]);
     return (num1 * num2).toString();
   }
+  // What is 27 minus 77?	
+  if (query.includes("minus")) {
+    var q = query.split(" ");
+    var num1 = parseInt(q[2]);
+    var num2 = parseInt(q[4]);
+    return (num1 - num2).toString();
+  }
   // Which of the following numbers is both a square and a cube: 23, 3364, 3147, 729, 22, 277, 4913?
   if (query.includes("square and a cube")) {
     var number = query.split(": ")[1].replace('?', "");
