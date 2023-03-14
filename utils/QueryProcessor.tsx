@@ -1,3 +1,10 @@
+function isPrime(num:number):boolean{
+  for(let i = 2, s = Math.sqrt(num); i <= s; i++) {
+      if(num % i === 0) return false;
+  }
+  return num > 1;
+}
+
 export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
@@ -63,7 +70,6 @@ export default function QueryProcessor(query: string): string {
         return numbers[i]
       }
     }
-    return 'aaa'
   }
   // What is 33 to the power of 45?	
   if (query.includes("to the power of")) {
@@ -72,5 +78,23 @@ export default function QueryProcessor(query: string): string {
     var num2 = parseInt(q[7]);
     return (Math.pow(num1, num2)).toString();
   }
+
+  // Which of the following numbers are primes: 97, 83, 91, 4, 7?	
+  if (query.includes("following numbers are primes")) {
+
+
+    var number = query.split(": ")[1].replace('?', "");
+    var numbers = number.split(", ")
+
+    for (let i = 0; i < numbers.length; i++){
+      var n = parseInt(numbers[i])
+      if (isPrime(n)){
+        return numbers[i]
+      }
+    }
+  }
+
+
+
   return "";
 }
