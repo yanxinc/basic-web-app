@@ -9,19 +9,13 @@ export default function QueryProcessor(query: string): string {
   if (query.includes("What is your name?")) {
     return "abcd";
   }
-  // What is 31 plus 51 plus 12?	
+  
   if (query.includes("What is") && query.includes("plus")) {
-    // var q = query.split(" ");
-    // var num1 = parseInt(q[2]);
-    // var num2 = parseInt(q[4]);
-    // return (num1 + num2).toString();
-
-
-    var number = query.replace("What is ", "").replace("?", "").split(" plus ");
+    var ns = query.replace("What is ", "").replace("?", "").split(" plus ");
 
     var sum = 0;
-    for (let i = 0; i < number.length; i++){
-      sum += parseInt(numbers[i]);
+    for (let i = 0; i < ns.length; i++){
+      sum += parseInt(ns[i]);
     }
 
     return sum.toString();
