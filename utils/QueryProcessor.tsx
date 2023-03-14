@@ -29,6 +29,16 @@ export default function QueryProcessor(query: string): string {
 
     return max.toString();
   }
+  // What is 86 multiplied by 26?
+  if (query.includes("multiplied")) {
+    var q = query.split(" ");
+    var num1 = parseInt(q[2]);
+    var num2 = parseInt(q[5]);
+    return (num1 * num2).toString();
+  }
+  // if (query.includes("")) {
+  //   return "";
+  // }
 
   return "";
 }
