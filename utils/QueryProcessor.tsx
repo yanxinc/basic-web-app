@@ -9,9 +9,12 @@ export default function QueryProcessor(query: string): string {
   if (query.includes("What is your name?")) {
     return "abcd";
   }
-  // if (query.includes("What is 21 plus 46?")) {
-  //   return "67";
-  // }
+  if (query.includes("What is") && query.includes("plus")) {
+    var q = query.split(" ");
+    var num1 = parseInt(q[2]);
+    var num2 = parseInt(q[4]);
+    return (num1 + num2).toString();
+  }
 
   if (query.includes("Which of the following numbers is the largest")) {
     var number = query.split(": ")[1].replace('?', "");
